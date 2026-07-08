@@ -63,3 +63,4 @@ function finalizarCompra() {
     window.location.href = "checkout.html";
   }
 }
+
