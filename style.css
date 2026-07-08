@@ -113,3 +113,108 @@ footer {
     width: 90%; /* uma coluna */
   }
 }
+
+/* Carrinho */
+.carrinho {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.carrinho h2 {
+  color: #6a1b9a;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+}
+
+.carrinho li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.carrinho-total {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #4a148c;
+}
+
+.checkout {
+  text-align: center;
+  padding: 40px;
+}
+
+.qrcode {
+  width: 250px;
+  margin: 20px auto;
+  display: block;
+}
+
+.pix-chave {
+  font-weight: bold;
+  color: #6a1b9a;
+  font-size: 1.2em;
+}
+
+/* Seção Sobre Nós */
+.sobre-nos {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sobre-nos h2 {
+  color: #6a1b9a;
+  margin-bottom: 20px;
+}
+
+.sobre-nos p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.imagem-sobre {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Rodapé */
+footer {
+  background: #d8bfd8;
+  color: #4a148c;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .produto {
+    width: 45%;
+  }
+  .imagem-sobre {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .produto {
+    width: 90%;
+  }
+  .imagem-sobre {
+    width: 100%;
+  }
+}
