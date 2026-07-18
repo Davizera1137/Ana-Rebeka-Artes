@@ -83,6 +83,19 @@
       <button onclick="finalizarCompra()">Finalizar Compra</button>
     </section>
 
+    <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
+<button onclick="copiarPix()">Copiar chave Pix</button>
+
+<script>
+function copiarPix() {
+  const chave = document.getElementById("pix-chave").innerText;
+  navigator.clipboard.writeText(chave).then(() => {
+    alert("Chave Pix copiada!");
+  });
+}
+</script>
+
+
     <!-- Seção de Contato -->
   <section id="contato" class="contato">
   <h2>📞 Contato</h2>

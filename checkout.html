@@ -26,6 +26,44 @@
     <p><a href="https://wa.me/5518996789690" target="_blank">+55 (18) 99678-9690</a></p>
   </main>
 
+  <script>
+function carregarCarrinhoCheckout() {
+  const lista = document.getElementById("lista-checkout");
+  const totalSpan = document.getElementById("total-checkout");
+  const linkWhatsApp = document.getElementById("link-whatsapp");
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  // Montar lista de produtos
+  let mensagem = "Olá, segue meu pedido:%0A"; // %0A = quebra de linha
+
+  carrinho.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.produto} - R$${item.preco.toFixed(2)}`;
+    lista.appendChild(li);
+    total += item.preco;
+
+    mensagem += `- ${item.produto} (R$${item.preco.toFixed(2)})%0A`;
+  });
+
+  totalSpan.innerText = total.toFixed(2);
+  mensagem += `Total: R$${total.toFixed(2)}%0A`;
+
+  // Codificar mensagem para URL
+  const mensagemCodificada = encodeURIComponent(mensagem);
+
+  // Atualizar link do WhatsApp
+  linkWhatsApp.href = `https://wa.me/5518996789690?text=${mensagemCodificada}`;
+}
+
+// Executa ao carregar a página
+carregarCarrinhoCheckout();
+</script>
+
+
   <footer>
     <p>© 2026 Ana Rebeka Artes - Todos os direitos reservados</p>
   </footer>
