@@ -6,6 +6,26 @@
   <title>Ana Rebeka Artes - Bordados</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="checkout.html">
+
+  <!-- CSS do Modal -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
 </head>
 <body>
   <!-- Cabeçalho -->
@@ -33,7 +53,7 @@
   <main>
     <section class="produtos">
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-07 at 11.30.48.png" alt="Kit Lavanda com 3 peças">
+        <img src="img/WhatsApp Image 2026-07-07 at 11.30.48.png" alt="Kit Lavanda com 3 peças" onclick="abrirModal(this.src)">
         <h3>Kit Lavanda</h3>
         <p>3 peças</p>
         <p class="preco">R$130,00</p>
@@ -41,7 +61,7 @@
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-07 at 11.31.54.png" alt="Kit Fralda de boca e ombro">
+        <img src="img/WhatsApp Image 2026-07-07 at 11.31.54.png" alt="Kit Fralda de boca e ombro" onclick="abrirModal(this.src)">
         <h3>Kit Fralda de boca e ombro</h3>
         <p>2 peças</p>
         <p class="preco">R$90,00</p>
@@ -49,7 +69,7 @@
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-07 at 11.33.09.png" alt="Kit Fralda de boca e ombro">
+        <img src="img/WhatsApp Image 2026-07-07 at 11.33.09.png" alt="Kit Fralda de boca e ombro" onclick="abrirModal(this.src)">
         <h3>Kit Fralda de boca e ombro</h3>
         <p>2 peças</p>
         <p class="preco">R$90,00</p>
@@ -57,7 +77,7 @@
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-07 at 11.33.09 (1).png" alt="Kit Fralda de boca e ombro">
+        <img src="img/WhatsApp Image 2026-07-07 at 11.33.09 (1).png" alt="Kit Fralda de boca e ombro" onclick="abrirModal(this.src)">
         <h3>Kit Fralda de boca e ombro</h3>
         <p>2 peças</p>
         <p class="preco">R$90,00</p>
@@ -65,7 +85,7 @@
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-07 at 11.33.10.png" alt="Kit Fralda de boca e ombro">
+        <img src="img/WhatsApp Image 2026-07-07 at 11.33.10.png" alt="Kit Fralda de boca e ombro" onclick="abrirModal(this.src)">
         <h3>Kit Fralda de boca e ombro</h3>
         <p>2 peças</p>
         <p class="preco">R$90,00</p>
@@ -84,33 +104,46 @@
     </section>
 
     <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
-<button onclick="copiarPix()">Copiar chave Pix</button>
-
-<script>
-function copiarPix() {
-  const chave = document.getElementById("pix-chave").innerText;
-  navigator.clipboard.writeText(chave).then(() => {
-    alert("Chave Pix copiada!");
-  });
-}
-</script>
-
+    <button onclick="copiarPix()">Copiar chave Pix</button>
 
     <!-- Seção de Contato -->
-  <section id="contato" class="contato">
-  <h2>📞 Contato</h2>
-  <p>Fale conosco pelo WhatsApp:</p>
-  <p><a href="https://wa.me/5518996789690" target="_blank">📱 (18) 99678-9690</a></p>
-  </section>
+    <section id="contato" class="contato">
+      <h2>📞 Contato</h2>
+      <p>Fale conosco pelo WhatsApp:</p>
+      <p><a href="https://wa.me/5518996789690" target="_blank">📱 (18) 99678-9690</a></p>
+    </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="info">
-      <p>© 2026 Ana Rebeka Artes - Todos os direitos reservados</p>
-      <p>Política de Privacidade | Trocas e Devoluções</p>
+    <!-- Rodapé -->
+    <footer>
+      <div class="info">
+        <p>© 2026 Ana Rebeka Artes - Todos os direitos reservados</p>
+        <p>Política de Privacidade | Trocas e Devoluções</p>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="fecharModal()">
+      <img id="imagemModal">
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- Scripts -->
+    <script>
+      function copiarPix() {
+        const chave = document.getElementById("pix-chave").innerText;
+        navigator.clipboard.writeText(chave).then(() => {
+          alert("Chave Pix copiada!");
+        });
+      }
+
+      function abrirModal(src) {
+        document.getElementById("imagemModal").src = src;
+        document.getElementById("modal").style.display = "block";
+      }
+      function fecharModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
