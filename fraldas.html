@@ -64,10 +64,10 @@
     <section class="produtos">
       <div class="produto">
         <img src="img/WhatsApp Image 2026-07-18 at 20.27.45.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada </h3>
+        <h3>Fralda personalizada</h3>
         <p>Design exclusivo</p>
         <p class="preco">R$40,00</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="adicionarCarrinho(40)">Adicionar ao carrinho</button>
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
@@ -76,7 +76,7 @@
         <h3>Fralda personalizada</h3>
         <p>Conforto e estilo</p>
         <p class="preco">R$40,00</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="adicionarCarrinho(40)">Adicionar ao carrinho</button>
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
@@ -85,7 +85,7 @@
         <h3>Fralda personalizada</h3>
         <p>Bordado delicado</p>
         <p class="preco">R$40,00</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="adicionarCarrinho(40)">Adicionar ao carrinho</button>
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
@@ -94,7 +94,7 @@
         <h3>Fralda personalizada</h3>
         <p>Feita com carinho</p>
         <p class="preco">R$40,00</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="adicionarCarrinho(40)">Adicionar ao carrinho</button>
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
@@ -103,7 +103,7 @@
         <h3>Fralda personalizada</h3>
         <p>Detalhes únicos</p>
         <p class="preco">R$40,00</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="adicionarCarrinho(40)">Adicionar ao carrinho</button>
         <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
     </section>
@@ -170,7 +170,12 @@
     }
 
     function finalizarCompra() {
-      alert("Compra finalizada! Total: R$" + total.toFixed(2));
+      if (total === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+      }
+      // Redireciona para checkout
+      window.location.href = "checkout.html";
     }
   </script>
 </body>
