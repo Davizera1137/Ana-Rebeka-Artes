@@ -264,3 +264,47 @@ button:hover::before {
     left: 150%;
 }
 
+/**/
+
+.banner-opcoes {
+  display: flex;              /* coloca lado a lado */
+  justify-content: center;    /* centraliza os blocos */
+  align-items: flex-start;    /* alinha pelo topo */
+  gap: 40px;                  /* espaço entre eles */
+  margin-top: 20px;
+}
+
+.banner-opcoes .produto {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-opcoes .produto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.banner-opcoes .produto h3 {
+  color: #a64ca6;
+  margin-bottom: 5px;
+}
+
+.banner-opcoes .produto button {
+  background: #a64ca6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.banner-opcoes .produto button:hover {
+  background: #7a337a;
+}
