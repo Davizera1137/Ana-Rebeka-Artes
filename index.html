@@ -41,6 +41,47 @@
         max-height: 90%;
       }
     }
+
+    /* Ajustes para celular */
+@media (max-width: 480px) {
+  .banner-opcoes {
+    flex-direction: column;   /* empilha os produtos */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .banner-opcoes .produto {
+    width: 90%;               /* ocupa quase toda a tela */
+  }
+
+  .pagamento {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .pagamento button {
+    width: 90%;               /* botões largos no celular */
+    margin-top: 10px;
+  }
+
+  #contato {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+/* Ajustes para tablet */
+@media (max-width: 768px) {
+  .banner-opcoes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner-opcoes .produto {
+    width: 45%;               /* duas colunas */
+  }
+}
+
   </style>
 </head>
 <body>
