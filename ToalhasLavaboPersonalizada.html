@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Rebeka Artes - Bordados</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- CSS do Modal Responsivo -->
   <style>
+    /* Grade fixa com 3 colunas */
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .produto {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .produto h3 {
+      margin: 10px 0;
+    }
+
+    .produto .preco {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -33,7 +66,6 @@
       color: white;
       cursor: pointer;
     }
-
     @media (min-width: 768px) {
       .modal img {
         width: auto;
@@ -59,38 +91,47 @@
   <!-- Produtos -->
   <main>
     <section class="produtos">
+      <!-- Primeira linha (3 produtos) -->
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-18 at 20.27.45.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada</h3>
+        <img src="img/WhatsApp Image 2026-08-04 at 20.02.01.png" alt="Toalha de Lavabo Musical" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo Musical</h3>
+        <p>Design exclusivo</p>
+        <p class="preco">R$50,00</p>
+      </div>
+
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-04 at 20.02.44.png" alt="Toalha de Lavabo Musical" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo Musical</h3>
+        <p>Design exclusivo</p>
+        <p class="preco">R$50,00</p>
+      </div>
+
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-04 at 20.02.56.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo</h3>
+        <p>Design exclusivo</p>
+        <p class="preco">R$40,00</p>
+      </div>
+
+      <!-- Segunda linha (3 produtos) -->
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-04 at 20.03.06.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo</h3>
         <p>Design exclusivo</p>
         <p class="preco">R$40,00</p>
       </div>
 
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-18 at 20.46.25.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada</h3>
-        <p>Conforto e estilo</p>
+        <img src="img/WhatsApp Image 2026-08-04 at 20.03.15.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo</h3>
+        <p>Design exclusivo</p>
         <p class="preco">R$40,00</p>
       </div>
 
       <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-18 at 20.53.01.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada</h3>
-        <p>Bordado delicado</p>
-        <p class="preco">R$40,00</p>
-      </div>
-
-      <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-18 at 20.55.06.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada</h3>
-        <p>Feita com carinho</p>
-        <p class="preco">R$40,00</p>
-      </div>
-
-      <div class="produto">
-        <img src="img/WhatsApp Image 2026-07-18 at 20.55.24.png" alt="" onclick="abrirModal(this.src)">
-        <h3>Fralda personalizada</h3>
-        <p>Detalhes únicos</p>
+        <img src="img/WhatsApp Image 2026-08-04 at 20.03.24.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
+        <h3>Toalha de Lavabo</h3>
+        <p>Design exclusivo</p>
         <p class="preco">R$40,00</p>
       </div>
     </section>

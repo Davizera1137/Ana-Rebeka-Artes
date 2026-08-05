@@ -5,67 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finalizar Compra - Ana Rebeka Artes</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="index.html">
+
+  <style>
+    .checkout {
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(to right, #f8f0ff, #fff);
+      border-radius: 12px;
+      margin: 30px auto;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .checkout h1 {
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .checkout p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    .qrcode {
+      width: 280px;
+      max-width: 90%;
+      margin: 20px auto;
+      display: block;
+      border: 4px solid #6a1b9a;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(106, 27, 154, 0.3);
+    }
+
+    .pix-chave {
+      font-weight: bold;
+      color: #6a1b9a;
+      font-size: 1.3em;
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: #d8bfd8;
+      color: #4a148c;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header>
     <div class="logo">Ana Rebeka Artes</div>
   </header>
 
+  <!-- Conteúdo principal -->
   <main class="checkout">
     <h1>Finalizar Compra</h1>
     <p>Escaneie o QR Code abaixo para pagar via Pix:</p>
 
-    <!-- QR Code gerado da sua chave Pix -->
+    <!-- QR Code da chave Pix -->
     <img src="img/Cartaz pagamentos via pix simples branco_20260708_112915_0000.png" alt="QR Code Pix" class="qrcode">
 
     <p>Ou copie e cole a chave Pix:</p>
-    <p class="pix-chave">(18)99678-9690</p>
+    <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
+    <button onclick="copiarPix()">Copiar chave Pix</button>
 
     <h2>📱 Envie o comprovante para nosso WhatsApp:</h2>
     <p><a href="https://wa.me/5518996789690" target="_blank">+55 (18) 99678-9690</a></p>
   </main>
 
-  <script>
-function carregarCarrinhoCheckout() {
-  const lista = document.getElementById("lista-checkout");
-  const totalSpan = document.getElementById("total-checkout");
-  const linkWhatsApp = document.getElementById("link-whatsapp");
-
-  lista.innerHTML = "";
-  let total = 0;
-
-  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-  // Montar lista de produtos
-  let mensagem = "Olá, segue meu pedido:%0A"; // %0A = quebra de linha
-
-  carrinho.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = `${item.produto} - R$${item.preco.toFixed(2)}`;
-    lista.appendChild(li);
-    total += item.preco;
-
-    mensagem += `- ${item.produto} (R$${item.preco.toFixed(2)})%0A`;
-  });
-
-  totalSpan.innerText = total.toFixed(2);
-  mensagem += `Total: R$${total.toFixed(2)}%0A`;
-
-  // Codificar mensagem para URL
-  const mensagemCodificada = encodeURIComponent(mensagem);
-
-  // Atualizar link do WhatsApp
-  linkWhatsApp.href = `https://wa.me/5518996789690?text=${mensagemCodificada}`;
-}
-
-// Executa ao carregar a página
-carregarCarrinhoCheckout();
-</script>
-
-
+  <!-- Rodapé -->
   <footer>
     <p>© 2026 Ana Rebeka Artes - Todos os direitos reservados</p>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    function copiarPix() {
+      const chave = document.getElementById("pix-chave").innerText;
+      navigator.clipboard.writeText(chave).then(() => {
+        alert("Chave Pix copiada!");
+      });
+    }
+  </script>
 </body>
 </html>

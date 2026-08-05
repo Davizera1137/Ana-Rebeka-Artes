@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-      <!-- Cabeçalho -->
+  <!-- Cabeçalho -->
   <header>
     <div class="logo">Ana Rebeka Artes</div>
     <nav>
@@ -52,10 +52,8 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <div class="icons">
-      <span>🛒</span>
-    </div>
   </header>
+
   <!-- Produtos -->
   <main>
     <section class="produtos">
@@ -64,8 +62,6 @@
         <h3>Kit Safari</h3>
         <p>Design exclusivo</p>
         <p class="preco">R$480,00</p>
-        <button onclick="adicionarCarrinho(480)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -73,8 +69,6 @@
         <h3>Kit Lavanda</h3>
         <p>Conforto e estilo</p>
         <p class="preco">R$130,00</p>
-        <button onclick="adicionarCarrinho(130)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -82,8 +76,6 @@
         <h3>Kit Dinossauro</h3>
         <p>Bordado delicado</p>
         <p class="preco">R$90,00</p>
-        <button onclick="adicionarCarrinho(90)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -91,8 +83,6 @@
         <h3>Kit Ursinho Azul</h3>
         <p>Feito com carinho</p>
         <p class="preco">R$90,00</p>
-        <button onclick="adicionarCarrinho(90)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -100,8 +90,6 @@
         <h3>Kit Elefantinho Rosa</h3>
         <p>Detalhes únicos</p>
         <p class="preco">R$90,00</p>
-        <button onclick="adicionarCarrinho(90)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -109,8 +97,6 @@
         <h3>Kit Ursinho</h3>
         <p>Conjunto completo</p>
         <p class="preco">R$240,00</p>
-        <button onclick="adicionarCarrinho(240)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -118,8 +104,6 @@
         <h3>Kit Safari</h3>
         <p>Bordado personalizado</p>
         <p class="preco">R$90,00</p>
-        <button onclick="adicionarCarrinho(90)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -127,8 +111,6 @@
         <h3>Kit Safari</h3>
         <p>Delicadeza e estilo</p>
         <p class="preco">R$110,00</p>
-        <button onclick="adicionarCarrinho(110)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -136,8 +118,6 @@
         <h3>Kit Safari</h3>
         <p>Feito sob medida</p>
         <p class="preco">R$110,00</p>
-        <button onclick="adicionarCarrinho(110)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -145,8 +125,6 @@
         <h3>Kit Passarinho</h3>
         <p>Detalhes bordados</p>
         <p class="preco">R$100,00</p>
-        <button onclick="adicionarCarrinho(100)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
 
       <div class="produto">
@@ -154,22 +132,21 @@
         <h3>Kit Safari</h3>
         <p>Exclusividade garantida</p>
         <p class="preco">R$220,00</p>
-        <button onclick="adicionarCarrinho(220)">Adicionar ao carrinho</button>
-        <button onclick="window.location.href='checkout.html'">Comprar agora</button>
       </div>
     </section>
   </main>
 
-  <!-- Carrinho -->
-  <section class="carrinho">
-    <h2>🛒 Carrinho</h2>
-    <ul id="lista-carrinho"></ul>
-    <p class="carrinho-total">Total: R$ <span id="total">0.00</span></p>
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
-  </section>
-
+  <!-- Pagamento -->
+<section class="pagamento">
+  <h2>💳 Pagamento</h2>
+  <p>Faça seu pagamento via Pix:</p>
   <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
   <button onclick="copiarPix()">Copiar chave Pix</button>
+
+  <!-- Botão para ir ao checkout -->
+  <button onclick="window.location.href='checkout.html'">Ir para Checkout</button>
+</section>
+
 
   <!-- Contato -->
   <section id="contato" class="contato">
@@ -208,33 +185,6 @@
     function fecharModal() {
       document.getElementById("modal").style.display = "none";
     }
-
-    // Carrinho simples
-    let total = 0;
-    function adicionarCarrinho(preco) {
-      const lista = document.getElementById("lista-carrinho");
-      const item = document.createElement("li");
-      item.textContent = "Produto - R$" + preco.toFixed(2);
-      lista.appendChild(item);
-      total += preco;
-      document.getElementById("total").textContent = total.toFixed(2);
-    }
-
-function finalizarCompra() {
-  if (total === 0) {
-    document.querySelector(".carrinho-total").textContent = "Carrinho vazio!";
-    return;
-  }
-
-  // Exibir mensagem no carrinho em vez de alert
-  document.querySelector(".carrinho-total").textContent = 
-    "Compra finalizada! Total: R$ " + total.toFixed(2);
-
-  // Opcional: redirecionar para checkout
-  window.location.href = "checkout.html";
-}
-
-
   </script>
 </body>
 </html>

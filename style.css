@@ -70,18 +70,46 @@ nav a {
   color: #6a1b9a;
 }
 
+/* Botões modernos */
 button {
-  background: #6a1b9a;
+  background: linear-gradient(135deg, #8e44ad, #b76bd8);
   color: white;
   border: none;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 6px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(106, 27, 154, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover {
-  background: #9c27b0;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(106, 27, 154, 0.5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255,255,255,0.35);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+button:hover::before {
+  left: 150%;
 }
 
 /* Rodapé */
@@ -94,7 +122,6 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  /* Tablet */
   .produtos {
     justify-content: center;
   }
@@ -104,7 +131,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  /* Celular */
   nav ul {
     flex-direction: column;
     gap: 10px;
@@ -112,53 +138,6 @@ footer {
   .produto {
     width: 90%; /* uma coluna */
   }
-}
-
-/* Carrinho */
-.carrinho {
-  background: white;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.carrinho h2 {
-  color: #6a1b9a;
-}
-
-.carrinho ul {
-  list-style: none;
-  padding: 0;
-}
-
-.carrinho li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.carrinho-total {
-  font-weight: bold;
-  margin-top: 15px;
-  color: #4a148c;
-}
-
-.checkout {
-  text-align: center;
-  padding: 40px;
-}
-
-.qrcode {
-  width: 250px;
-  margin: 20px auto;
-  display: block;
-}
-
-.pix-chave {
-  font-weight: bold;
-  color: #6a1b9a;
-  font-size: 1.2em;
 }
 
 /* Seção Sobre Nós */
@@ -188,15 +167,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Rodapé */
-footer {
-  background: #d8bfd8;
-  color: #4a148c;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Responsividade */
+/* Responsividade extra */
 @media (max-width: 768px) {
   .produto {
     width: 45%;
@@ -207,10 +178,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
   .produto {
     width: 90%;
   }
@@ -219,58 +186,12 @@ footer {
   }
 }
 
-/* Botões modernos */
-button {
-    background: linear-gradient(135deg, #8e44ad, #b76bd8);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    margin: 6px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 12px rgba(106, 27, 154, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Efeito ao passar o mouse */
-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(106, 27, 154, 0.5);
-}
-
-/* Efeito ao clicar */
-button:active {
-    transform: scale(0.95);
-}
-
-/* Brilho passando sobre o botão */
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 60%;
-    height: 100%;
-    background: rgba(255,255,255,0.35);
-    transform: skewX(-25deg);
-    transition: 0.5s;
-}
-
-button:hover::before {
-    left: 150%;
-}
-
-/**/
-
+/* Banner opções */
 .banner-opcoes {
-  display: flex;              /* coloca lado a lado */
-  justify-content: center;    /* centraliza os blocos */
-  align-items: flex-start;    /* alinha pelo topo */
-  gap: 40px;                  /* espaço entre eles */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
   margin-top: 20px;
 }
 
