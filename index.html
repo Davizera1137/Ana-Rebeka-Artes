@@ -42,44 +42,106 @@
       }
     }
 
+    /* Layout dos produtos com Grid */
+    .banner-opcoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+      gap: 30px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    .banner-opcoes .produto {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .banner-opcoes .produto:hover {
+      transform: translateY(-5px);
+    }
+
+    .banner-opcoes .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .banner-opcoes .produto h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .banner-opcoes .produto p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .banner-opcoes .produto button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #ff6f61; /* mesma cor original */
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .banner-opcoes .produto button:hover {
+      background: #e85c50; /* mesma cor original no hover */
+    }
+
+    /* Ajustes para tablet */
+    @media (max-width: 768px) {
+      .banner-opcoes {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+      }
+    }
+
     /* Ajustes para celular */
-@media (max-width: 480px) {
-  .banner-opcoes {
-    flex-direction: column;   /* empilha os produtos */
-    align-items: center;
-    gap: 20px;
-  }
+    @media (max-width: 480px) {
+      .banner-opcoes {
+        grid-template-columns: 1fr; /* 1 coluna */
+      }
 
-  .banner-opcoes .produto {
-    width: 90%;               /* ocupa quase toda a tela */
-  }
+      .banner-opcoes .produto {
+        width: 90%;
+      }
 
-  .pagamento {
-    text-align: center;
-    padding: 20px;
-  }
+      .pagamento {
+        text-align: center;
+        padding: 20px;
+      }
 
-  .pagamento button {
-    width: 90%;               /* botões largos no celular */
-    margin-top: 10px;
-  }
+      .pagamento button {
+        width: 90%;
+        margin-top: 10px;
+      }
 
-  #contato {
-    text-align: center;
-    padding: 20px;
-  }
+      #contato {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+
+    .banner-opcoes .produto button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #8e44ad; /* roxo/lilás igual ao da imagem */
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* Ajustes para tablet */
-@media (max-width: 768px) {
-  .banner-opcoes {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .banner-opcoes .produto {
-    width: 45%;               /* duas colunas */
-  }
+.banner-opcoes .produto button:hover {
+  background: #732d91; /* tom mais escuro no hover */
 }
 
   </style>
@@ -103,7 +165,7 @@
     <p>Para momentos especiais</p>
 
     <div class="banner-opcoes">
-      <!-- Fraldas Personalizadas -->
+      <!-- 4 primeiros produtos -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-07-18 at 20.27.45.png" alt="Fraldas de boca personalizada" onclick="abrirModal(this.src)">
         <h3>Fraldas de boca personalizada</h3>
@@ -111,7 +173,6 @@
         <button onclick="window.location.href='fraldas.html'">Ver opções</button>
       </div>
 
-      <!-- Kit Maternidade -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-07-18 at 21.29.22.png" alt="Kit Maternidade" onclick="abrirModal(this.src)">
         <h3>Kit Maternidade</h3>
@@ -119,7 +180,6 @@
         <button onclick="window.location.href='kitmaternidade.html'">Ver opções</button>
       </div>
 
-      <!-- Toalhas Fralda de Banho -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-08-04 at 19.25.41.png" alt="Toalhas Fralda de Banho" onclick="abrirModal(this.src)">
         <h3>Toalhas Fraldas de Banho</h3>
@@ -127,7 +187,6 @@
         <button onclick="window.location.href='ToalhasFraldaBanho.html'">Ver opções</button>
       </div>
 
-      <!-- Fralda Grande Personalizada -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-08-04 at 19.54.04.png" alt="Fralda Grande Personalizada" onclick="abrirModal(this.src)">
         <h3>Fralda Grande Personalizada</h3>
@@ -135,12 +194,33 @@
         <button onclick="window.location.href='FraldaGrandePersonalizada.html'">Ver opções</button>
       </div>
 
-      <!-- Toalhas Lavabo Personalizada -->
+      <!-- 3 produtos abaixo -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-08-04 at 20.02.01.png" alt="Toalhas Lavabo Personalizada" onclick="abrirModal(this.src)">
         <h3>Toalhas Lavabo Personalizada</h3>
         <p>Peças exclusivas para uso depois do banho</p>
         <button onclick="window.location.href='ToalhasLavaboPersonalizada.html'">Ver opções</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-07 at 19.46.11.png" alt="Kit Necessaire + Toalha" onclick="abrirModal(this.src)">
+        <h3>Kit Necessaire + Toalha</h3>
+        <p>Peças exclusivas para uso depois do banho</p>
+        <button onclick="window.location.href='KitNecessaireToalha.html'">Ver opções</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-07 at 20.15.41.png" alt="Kit para Cozinha" onclick="abrirModal(this.src)">
+        <h3>Kit para Cozinha</h3>
+        <p>Peças exclusivas para uso depois do banho</p>
+        <button onclick="window.location.href='KitCozinha.html'">Ver opções</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/WhatsApp Image 2026-08-07 at 20.57.24.png" alt="Toalhas de Visita" onclick="abrirModal(this.src)">
+        <h3>Toalhas de Visita</h3>
+        <p>Peças exclusivas para uso depois do banho</p>
+        <button onclick="window.location.href='ToalhasVisita.html'">Ver opções</button>
       </div>
     </div>
   </section>
