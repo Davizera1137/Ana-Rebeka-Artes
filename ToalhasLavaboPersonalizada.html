@@ -1,46 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Rebeka Artes - Bordados</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- CSS do Modal Responsivo -->
   <style>
-    /* Grade fixa com 3 colunas */
-    .produtos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .produto {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .produto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .produto h3 {
-      margin: 10px 0;
-    }
-
-    .produto .preco {
-      font-weight: bold;
-      color: #333;
-    }
-
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -66,6 +33,7 @@
       color: white;
       cursor: pointer;
     }
+
     @media (min-width: 768px) {
       .modal img {
         width: auto;
@@ -91,11 +59,11 @@
   <!-- Produtos -->
   <main>
     <section class="produtos">
-      <!-- Primeira linha (3 produtos) -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-08-04 at 20.02.01.png" alt="Toalha de Lavabo Musical" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo Musical</h3>
         <p>Design exclusivo</p>
+        <p>Medidas: 35cm x 45cm</p>
         <p class="preco">R$50,00</p>
       </div>
 
@@ -103,6 +71,7 @@
         <img src="img/WhatsApp Image 2026-08-04 at 20.02.44.png" alt="Toalha de Lavabo Musical" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo Musical</h3>
         <p>Design exclusivo</p>
+        <p>Medidas: 35cm x 45 cm</p>
         <p class="preco">R$50,00</p>
       </div>
 
@@ -110,14 +79,15 @@
         <img src="img/WhatsApp Image 2026-08-04 at 20.02.56.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo</h3>
         <p>Design exclusivo</p>
+        <p>Medidas: 35cm x 45 cm</p>
         <p class="preco">R$40,00</p>
       </div>
 
-      <!-- Segunda linha (3 produtos) -->
       <div class="produto">
         <img src="img/WhatsApp Image 2026-08-04 at 20.03.06.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo</h3>
         <p>Design exclusivo</p>
+        <p>Medidas: 35cm x 45 cm</p>
         <p class="preco">R$40,00</p>
       </div>
 
@@ -125,6 +95,7 @@
         <img src="img/WhatsApp Image 2026-08-04 at 20.03.15.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo</h3>
         <p>Design exclusivo</p>
+        <p><p>Medidas: 35cm x 45 cm</p></p>
         <p class="preco">R$40,00</p>
       </div>
 
@@ -132,22 +103,20 @@
         <img src="img/WhatsApp Image 2026-08-04 at 20.03.24.png" alt="Toalha de Lavabo" onclick="abrirModal(this.src)">
         <h3>Toalha de Lavabo</h3>
         <p>Design exclusivo</p>
+        <p><p>Medidas: 35cm x 45 cm</p></p>
         <p class="preco">R$40,00</p>
       </div>
     </section>
   </main>
 
   <!-- Pagamento -->
-<section class="pagamento">
-  <h2>💳 Pagamento</h2>
-  <p>Faça seu pagamento via Pix:</p>
-  <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
-  <button onclick="copiarPix()">Copiar chave Pix</button>
-
-  <!-- Botão para ir ao checkout -->
-  <button onclick="window.location.href='checkout.html'">Ir para Checkout</button>
-</section>
-
+  <section class="pagamento">
+    <h2>💳 Pagamento</h2>
+    <p>Faça seu pagamento via Pix:</p>
+    <p class="pix-chave" id="pix-chave">(18)99678-9690</p>
+    <button onclick="copiarPix()">Copiar chave Pix</button>
+    <button onclick="window.location.href='checkout.html'">Ir para Checkout</button>
+  </section>
 
   <!-- Contato -->
   <section id="contato" class="contato">
